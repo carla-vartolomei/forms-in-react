@@ -1,17 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './form.css';
 
 const Form = () => {
-  
+  const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: ''
+  })
+
   const onChangeHandler = e => {
-    console.log(e)
-  }
+    setFormState({
+      ...formState, 
+      [e.target.name]: e.target.value
+    })
+  };
 
    return (
      <form>
-       <h1>My first form in react</h1>
+       <h1>My Awesome Form</h1>
+      <span>
+        {`Your name is ${formState.firstName} ${formState.lastName}`}
+      </span>
        <label htmlFor='firstName'>First name</label>
-       <input id='firstName'/>
+      <input
+        id='firstName'
+        name='firstName'
+        onChange={onChangeHandler}
+        value={formState.firstName} />
+       <label htmlFor='lastName'>Last name</label>
+      <input
+        id='lastName'
+        name='lastName'
+        onChange={onChangeHandler}
+        value={formState.lastName} />
      </form>
    );
 }
