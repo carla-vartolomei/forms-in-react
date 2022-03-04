@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import './form.css';
 
 const intialState = {
-    firstName: '',
-    lastName: ''
+  firstName: '',
+  lastName: '',
+  biography: ''
 }
   
 const Form = () => {
@@ -40,7 +41,15 @@ const Form = () => {
         id='lastName'
         name='lastName'
         onChange={onChangeHandler}
-         value={formState.lastName} />
+        value={formState.lastName} />
+      <label htmlFor='biography'>Biography</label>
+      <textarea
+        id='biography'
+        name='biography'
+        rows='5'
+        onChange={onChangeHandler}
+        value={formState.biography}
+      />
        <button type='submit'>Save</button>
        <button type='button' onClick={onClickHandler}>Clear values</button>
       </form>
