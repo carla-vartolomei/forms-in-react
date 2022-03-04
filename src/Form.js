@@ -6,7 +6,10 @@ const intialState = {
   lastName: '',
   biography: '', 
   transport: '',
-  agree: false
+  agree: false,
+  breakfast: false, 
+  lunch: false, 
+  dinner: false, 
 }
   
 const Form = () => {
@@ -69,6 +72,33 @@ const Form = () => {
         <option value='cars'>Cars</option>
         <option value='boats'>Boats</option>
       </select>
+      <fieldset>
+        <legend>Select your meals</legend>
+        <input
+          type='checkbox'
+          id='breakfast'
+          name='breakfast'
+          onChange={onChangeHandler}
+          checked={formState.breakfast}
+        />
+        <label htmlFor='breakfast'>Breakfast</label>
+        <input
+          type='checkbox'
+          id='lunch'
+          name='lunch'
+          onChange={onChangeHandler}
+          checked={formState.lunch}
+        />
+        <label htmlFor='lunch'>Lunch</label>
+        <input
+          type='checkbox'
+          id='dinner'
+          name='dinner'
+          onChange={onChangeHandler}
+          checked={formState.dinner}
+        />
+        <label htmlFor='dinner'>Dinner</label>
+      </fieldset>
       <label htmlFor='agree'>I agree to the TOC!</label>
       <input
         type='checkbox'
