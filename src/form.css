@@ -43,3 +43,13 @@ input, textarea, select{
 select{ 
   height: 2rem;
 }
+
+fieldset{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+fieldset>label{
+  font-size: 1rem;
+  padding-left: 0.15rem;
+}
