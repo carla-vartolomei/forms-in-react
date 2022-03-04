@@ -25,7 +25,7 @@ button{
   background-color: pink;
 }
 
-label, span, button{ 
+label, span, button, option{ 
   font-size: 1.5rem;
   font-family:Georgia, 'Times New Roman', Times, serif;
   font-weight: bold;
@@ -33,9 +33,13 @@ label, span, button{
 
 span{margin-bottom: 1rem;}
 
-input, textarea{ 
+input, textarea, select{ 
   margin-top: 0.5rem;
   line-height: 1.5rem;
   border: 1px solid gray;
   border-radius: 0.75rem;
+}
+
+select{ 
+  height: 2rem;
 }
