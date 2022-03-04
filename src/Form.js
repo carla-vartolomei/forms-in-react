@@ -14,25 +14,26 @@ const Form = () => {
     })
   };
 
-   return (
+  return (
      <form>
-       <h1>My Awesome Form</h1>
+      <h1>My Awesome Form</h1>
       <span>
         {`Your name is ${formState.firstName} ${formState.lastName}`}
       </span>
-       <label htmlFor='firstName'>First name</label>
+      <label htmlFor='firstName'>First name</label>
       <input
         id='firstName'
         name='firstName'
         onChange={onChangeHandler}
         value={formState.firstName} />
-       <label htmlFor='lastName'>Last name</label>
+      <label htmlFor='lastName'>Last name</label>
       <input
         id='lastName'
         name='lastName'
         onChange={onChangeHandler}
-        value={formState.lastName} />
-     </form>
+         value={formState.lastName} />
+       <button type='submit'>Save</button>
+      </form>
    );
 }
 
