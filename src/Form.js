@@ -14,8 +14,13 @@ const Form = () => {
     })
   };
 
+  const onSubmitHandler = e => {
+    e.preventDefault();
+    console.log(formState);
+  }
+
   return (
-     <form>
+     <form onSubmit={onSubmitHandler}>
       <h1>My Awesome Form</h1>
       <span>
         {`Your name is ${formState.firstName} ${formState.lastName}`}
