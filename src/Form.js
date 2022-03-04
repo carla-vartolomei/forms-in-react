@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import './form.css';
 
-const Form = () => {
-  const [formState, setFormState] = useState({
+const intialState = {
     firstName: '',
     lastName: ''
-  })
+}
+  
+const Form = () => {
+  const [formState, setFormState] = useState(intialState);
 
   const onChangeHandler = e => {
     setFormState({
@@ -13,6 +15,8 @@ const Form = () => {
       [e.target.name]: e.target.value
     })
   };
+
+  const onClickHandler = () => setFormState(intialState);
 
   const onSubmitHandler = e => {
     e.preventDefault();
@@ -38,6 +42,7 @@ const Form = () => {
         onChange={onChangeHandler}
          value={formState.lastName} />
        <button type='submit'>Save</button>
+       <button type='button' onClick={onClickHandler}>Clear values</button>
       </form>
    );
 }
