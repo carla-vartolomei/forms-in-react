@@ -10,6 +10,7 @@ const intialState = {
   breakfast: false, 
   lunch: false, 
   dinner: false, 
+  shirtSize: ''
 }
   
 const Form = () => {
@@ -57,15 +58,13 @@ const Form = () => {
         name='biography'
         rows='5'
         onChange={onChangeHandler}
-        value={formState.biography}
-      />
+        value={formState.biography} />
       <label htmlFor='transport'>Choose your favorite transport</label>
       <select
         id='transport'
         name='transport'
         onChange={onChangeHandler}
-        value={formState.transport}
-      >
+        value={formState.transport} >
         <option>None selected</option>
         <option value='planes'>Planes</option>
         <option value='trains'>Trains</option>
@@ -79,34 +78,59 @@ const Form = () => {
           id='breakfast'
           name='breakfast'
           onChange={onChangeHandler}
-          checked={formState.breakfast}
-        />
+          checked={formState.breakfast} />
         <label htmlFor='breakfast'>Breakfast</label>
         <input
           type='checkbox'
           id='lunch'
           name='lunch'
           onChange={onChangeHandler}
-          checked={formState.lunch}
-        />
+          checked={formState.lunch} />
         <label htmlFor='lunch'>Lunch</label>
         <input
           type='checkbox'
           id='dinner'
           name='dinner'
           onChange={onChangeHandler}
-          checked={formState.dinner}
-        />
+          checked={formState.dinner} />
         <label htmlFor='dinner'>Dinner</label>
       </fieldset>
-      <label htmlFor='agree'>I agree to the TOC!</label>
-      <input
-        type='checkbox'
-        id='agree'
-        name='agree'
-        onChange={onChangeHandler}
-        checked={formState.agree}
-      />
+      <fieldset>
+        <legend>T-shirt size</legend>
+        <input
+          type='radio'
+          id='sizeS'
+          name='shirtSize'
+          value='s'
+          onChange={onChangeHandler}
+          checked={formState.shirtSize === 's'} />
+        <label htmlFor='sizeS'>Small</label>
+        <input
+          type='radio'
+          id='sizeM'
+          name='shirtSize'
+          value='m'
+          onChange={onChangeHandler}
+          checked={formState.shirtSize === 'm'} />
+        <label htmlFor='sizeM'>Medium</label>
+        <input
+          type='radio'
+          id='sizeL'
+          name='shirtSize'
+          value='l'
+          onChange={onChangeHandler}
+          checked={formState.shirtSize === 'l'} />
+        <label htmlFor='sizeL'>Large</label>
+      </fieldset>
+      <div>
+        <input
+          type='checkbox'
+          id='agree'
+          name='agree'
+          onChange={onChangeHandler}
+          checked={formState.agree} />
+        <label htmlFor='agree'>I agree to the TOC!</label>
+      </div>
        <button type='submit'>Save</button>
        <button type='button' onClick={onClickHandler}>Clear values</button>
       </form>

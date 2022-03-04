@@ -1,3 +1,10 @@
+@media only screen and (max-width: 600px)  {
+  form{
+    width: 100%;
+    height: 100%;
+  }
+}
+
 form { 
   display: flex;
   flex-direction: column;
@@ -5,6 +12,7 @@ form {
   max-width: 40rem;
   padding: 1.5rem;
   color: rgb(44, 42, 42);
+  background-color: pink;
 }
 
 h1{ 
@@ -22,7 +30,7 @@ button{
   line-height: 2rem;
   border: 1px solid rgb(238, 184, 193);
   border-radius: 0.75rem;
-  background-color: pink;
+  background-color: whitesmoke;
 }
 
 label, span, button, option, legend{ 
@@ -38,18 +46,21 @@ input, textarea, select{
   line-height: 1.5rem;
   border: 1px solid gray;
   border-radius: 0.75rem;
+  filter: hue-rotate(94deg);
 }
 
-select{ 
-  height: 2rem;
-}
+textarea{resize: none;}
+
+select{ height: 2rem;}
+
+select option{background-color: pink;}
 
 fieldset{
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-fieldset>label{
+fieldset>label, div>label, option{
   font-size: 1rem;
   padding-left: 0.15rem;
 }
